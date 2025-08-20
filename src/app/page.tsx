@@ -1,9 +1,23 @@
+'use client';
+
+import Layout from "@/components/layout/Layout";
+import Navbar from "@/components/layout/Navbar";
+import useAppData from "@/data/hook/useAppData";
+
 export default function Home() {
+  const { theme } = useAppData();
+
   return (
-    <div>
-      <h1>
-        Pagina inicial
-      </h1>
+    <div className={`${theme}`}>
+      <div className="flex mt-4 w-full justify-center">
+        <Navbar 
+          className="text-gray-200 bg-gradient-to-l from-gray-800 to-gray-900 dark:from-gray-200 dark:to-gray-100 dark:text-gray-900"
+          linkClassName="hover:text-blue-400 transition-colors duration-300 dark:hover:text-gray-400"
+        />
+      </div>
+      <Layout>
+        <h3>Conteúdo do portfolio...</h3>
+      </Layout>
     </div>
   );
 }

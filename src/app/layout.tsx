@@ -1,5 +1,6 @@
-import { Metadata } from "next";
 import "@/styles/globals.css";
+import { Metadata } from "next";
+import { AppProvider } from "../data/context/AppContext";
 
 export const metadata: Metadata = {
   title: "Portfolio - Fredson Luiz",
@@ -12,10 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <body>
-        {children}
-      </body>
+    <html lang="pt-br" suppressHydrationWarning>
+      <AppProvider>
+        <body>
+          {children}
+        </body>
+      </AppProvider>
     </html>
   );
 }
