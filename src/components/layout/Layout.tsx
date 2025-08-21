@@ -13,10 +13,10 @@ export default function Layout( props: LayoutProps ) {
   const { theme } = useAppData();
 
   return (
-    <div className={`${theme} flex h-full`}>
-      <div className={`flex flex-col p-7`}>
-        {/* <ApresentationContainer />
-        <ContactContainer /> */}
+    <div className={`${theme} flex h-full justify-center`}>
+      <div className={`flex flex-col p-7 w-full sm:w-2/3`}>
+        {/* <ApresentationContainer /> */}
+        <ContactContainer />
         {/* <Content>
           {props.children}
         </Content> */}
