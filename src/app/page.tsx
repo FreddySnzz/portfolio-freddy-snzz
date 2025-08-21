@@ -8,7 +8,9 @@ export default function Home() {
   const { theme } = useAppData();
 
   return (
-    <div className={`${theme}`}>
+    <div className={`${theme} flex flex-col min-h-screen
+    bg-gradient-to-br from-gray-800 to-gray-950 dark:from-gray-200 dark:to-gray-300 text-gray-200 dark:text-gray-800 animated-background`}
+    >
       <div className="flex mt-4 w-full justify-center">
         <Navbar 
           className="text-gray-200 bg-gradient-to-l from-gray-800 to-gray-900 dark:from-gray-200 dark:to-gray-100 dark:text-gray-900"

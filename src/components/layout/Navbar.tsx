@@ -11,7 +11,7 @@ interface NavbarProps extends React.HTMLAttributes<HTMLDivElement> {
 export default function Navbar({ className, linkClassName }: NavbarProps) {
 
   return (
-    <header className={`flex gap-6 px-6 py-2 w-full sm:text-lg items-center justify-center sm:w-2/3 sm:rounded-full shadow-md ${className}`}>
+    <header className={`flex gap-6 px-6 py-2 w-full sm:text-lg items-center justify-center sm:w-2/3 sm:rounded-full shadow-lg ${className}`}>
       <Link
         href="#"
         className={`flex items-center grow cursor-default ${linkClassName}`}
