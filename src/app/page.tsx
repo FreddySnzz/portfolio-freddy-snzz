@@ -1,5 +1,7 @@
 'use client';
 
+import ContactContainer from "@/components/layout/ContactContainer";
+import Footer from "@/components/layout/Footer";
 import Layout from "@/components/layout/Layout";
 import Navbar from "@/components/layout/Navbar";
 import useAppData from "@/data/hook/useAppData";
@@ -18,8 +20,9 @@ export default function Home() {
         />
       </div>
       <Layout>
-        <h3>Conteúdo do portfolio...</h3>
+        <ContactContainer />
       </Layout>
+      <Footer />
     </div>
   );
 }

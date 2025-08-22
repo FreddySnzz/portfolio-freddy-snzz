@@ -39,20 +39,23 @@ export default function FormContainer() {
   }
 
   return (
-    <div className="flex grow flex-col items-center justify-center h-auto p-6 sm:ml-6 ">
+    <div className="flex grow flex-col items-center justify-center h-auto p-6 sm:ml-6 border rounded-xl border-gray-800 dark:border-gray-400">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col space-y-4 w-full">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem className="flex">
+              <FormItem className="flex gap-6">
                 <div className="grow">
                   <FormLabel className="font-bold">
                     Seu nome
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="João" {...field} className="mt-2 focus:border-0 focus:stroke-none" />
+                    <Input 
+                      placeholder="João" {...field} 
+                      className="mt-2 border border-gray-800 dark:border-gray-400 focus:border-0 focus:stroke-none" 
+                    />
                   </FormControl>
                   <FormMessage />
                 </div>
@@ -61,7 +64,10 @@ export default function FormContainer() {
                     Seu email
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="joao@mail.com" {...field} className="mt-2" />
+                    <Input 
+                    placeholder="joao@mail.com" {...field} 
+                    className="mt-2 border border-gray-800 dark:border-gray-400 focus:border-0 focus:stroke-none" 
+                  />
                   </FormControl>
                   <FormMessage />
                 </div>
@@ -69,10 +75,13 @@ export default function FormContainer() {
             )}
           />
           <div>
-            <FormLabel className="font-bold mb-2">
+            <FormLabel className="font-bold mb-2 mt-8">
               Mensagem
             </FormLabel>
-            <Textarea placeholder="Fique a vontade para escrever sua mensagem ou sua dúvida." />
+            <Textarea 
+              placeholder="Fique a vontade para escrever sua mensagem ou sua dúvida." 
+              className="border border-gray-800 dark:border-gray-400 focus:border-0 focus:stroke-none"
+            />
           </div>
           <Button type="submit">Enviar</Button>
         </form>

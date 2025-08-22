@@ -37,7 +37,7 @@ export default function Navbar({ className, linkClassName }: NavbarProps) {
       >
         <span>Contato</span>
       </Link>
-      <Separator orientation="vertical"/>
+      <Separator orientation="vertical" className="bg-muted-foreground" />
       <div>
         <ThemeToggle />
       </div>
