@@ -23,7 +23,7 @@ export default function Footer({ className }: FooterProps) {
         </div>
         <div className="flex grow justify-center items-center">
           <a
-            href="https://github.com/FreddySnzz"
+            href="https://wa.me/5586994147549?text=Olá, Fredson! Podemos agendar uma reunião?"
             target="_blank"
             rel="noopener noreferrer"
             className="flex gap-1 justify-center items-center ml-3 hover:text-gray-500 transition-colors"
