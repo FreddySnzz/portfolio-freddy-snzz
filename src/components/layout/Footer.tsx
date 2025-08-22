@@ -19,7 +19,7 @@ export default function Footer({ className }: FooterProps) {
       <div className="flex justify-center items-center">
         <div className="grow justify-center items-center">
           <span className="text-center text-sm font-semibold text-gray-800 dark:text-gray-600 mr-1">&copy; 2025 |</span>
-          <span className="text-center text-sm font-semibold">Fredson Luiz | Dev</span>
+          <span className="text-center text-sm font-semibold">Fredson Luiz</span>
         </div>
         <div className="flex grow justify-center items-center">
           <a

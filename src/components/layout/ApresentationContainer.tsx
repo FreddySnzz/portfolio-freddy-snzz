@@ -1,11 +1,15 @@
+import { ButtonScrollDown } from "../Button";
+
 export default function ApresentationContainer() {
   return (
-    <div className="flex flex-col items-center justify-center h-auto bg-gray-800 text-white">
-      <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-      <p className="text-lg mb-8">Explore my projects and skills.</p>
-      <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded transition-colors">
-        View Projects
-      </button>
-    </div>
+    <section id="home" className="flex flex-col items-center justify-center h-screen">
+      <h1 className="text-4xl text-center font-bold mb-4">
+        Olá! Bem-vindo(a) ao meu Portfolio! :)
+      </h1>
+      <p className="text-sm mb-8 text-center italic animate-pulse">
+        Bom te ver por aqui.
+      </p>
+      <ButtonScrollDown section="sobre" />
+    </section>
   );
 }

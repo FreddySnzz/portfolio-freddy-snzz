@@ -1,22 +1,23 @@
 'use client';
 
 import useAppData from "@/data/hook/useAppData";
-import Content from "./Content";
+import LayoutContent from "./LayoutContent";
 
 interface LayoutProps {
   children?: React.ReactNode;
+  className?: string;
 }
 
 export default function Layout( props: LayoutProps ) {
   const { theme } = useAppData();
 
   return (
-    <div>
+    <div className={props.className}>
       <div className={`${theme} flex h-full justify-center`}>
-        <div className={`flex flex-col p-7 w-full sm:w-2/3`}>
-          <Content>
+        <div className={`flex flex-col w-full sm:w-2/3`}>
+          <LayoutContent>
             {props.children}
-          </Content>
+          </LayoutContent>
         </div>
       </div>
     </div>
