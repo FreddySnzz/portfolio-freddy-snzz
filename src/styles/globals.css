@@ -136,7 +136,23 @@ body {
   }
 }
 
+/* Esconder barras de rolagem */
+.scroll-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scroll-hidden {
+  -ms-overflow-style: none;  /* IE e Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Animações */
 .animate-gradient-x {
   background-size: 200% 200%;
   animation: gradient-x 6s ease infinite;
+}
+
+.scroll-smooth-touch {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }

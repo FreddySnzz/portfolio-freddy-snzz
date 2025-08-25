@@ -10,7 +10,7 @@ interface NavbarProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export default function Navbar({ className }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
-  const linkClassName = `hover:text-blue-400 transition-colors duration-300 dark:hover:text-gray-400`
+  const linkClassName = `hover:text-blue-400 transition-colors font-semibold duration-300 dark:hover:text-gray-400`
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +23,7 @@ export default function Navbar({ className }: NavbarProps) {
 
   return (
     <header className="fixed flex mt-4 w-full justify-center z-50">
-      <div className={`flex gap-6 px-6 py-2 w-full sm:text-lg items-center justify-center sm:w-2/3 sm:rounded-full 
+      <div className={`flex gap-3 md:gap-6 px-6 py-2 w-full md:text-lg items-center justify-center md:w-10/12 md:rounded-full 
         shadow-lg text-gray-200 ${
           isScrolled ? `bg-transparent backdrop-blur-sm dark:text-black` 
           : `bg-gradient-to-l from-gray-800 to-gray-900 dark:from-gray-200 dark:to-gray-100 dark:text-gray-900`
@@ -34,7 +34,11 @@ export default function Navbar({ className }: NavbarProps) {
           className={`flex items-center grow cursor-default ${linkClassName}`}
         >
           <AiFillHome className="text-xl cursor-pointer"/>
-          <Separator orientation="vertical" />
+          { isScrolled && (
+            <span className="hidden md:block ml-4 text-center justify-center items-center">
+              Voltar para o início
+            </span>
+          )}
         </Link>
         <Link
           href="#sobre"
@@ -54,7 +58,7 @@ export default function Navbar({ className }: NavbarProps) {
         >
           <span>Contato</span>
         </Link>
-        <Separator orientation="vertical" className="bg-muted-foreground" />
+        <Separator orientation="vertical" className="hidden sm:block bg-muted-foreground" />
         <div>
           <ThemeToggle />
         </div>

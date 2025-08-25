@@ -12,7 +12,7 @@ export default function Footer({ className }: FooterProps) {
   return (
     <footer 
       className={`
-        p-2 text-center mt-auto bg-gray-950 dark:bg-gray-300
+        p-2 text-center mt-auto bg-black dark:bg-gray-300
         ${className}
       `}
     >

@@ -19,7 +19,7 @@ export default function ContactContainer() {
         tittleClassName="font-black"
         subtitleClassName="text-sm text-muted-foreground"
       />
-      <div className="sm:flex items-start justify-start mt-14">
+      <div className="md:flex items-start justify-start mt-14">
         <div className="flex flex-col mb-6">
           <h3 className="font-bold">
             Informações de contato

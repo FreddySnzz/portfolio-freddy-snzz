@@ -14,7 +14,7 @@ export default function Layout( props: LayoutProps ) {
   return (
     <div className={props.className}>
       <div className={`${theme} flex h-full justify-center`}>
-        <div className={`flex flex-col w-full sm:w-2/3`}>
+        <div className={`flex flex-col w-full md:w-10/12`}>
           <LayoutContent>
             {props.children}
           </LayoutContent>

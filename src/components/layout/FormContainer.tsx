@@ -39,7 +39,7 @@ export default function FormContainer() {
   }
 
   return (
-    <div className="flex grow flex-col items-center justify-center h-auto p-6 sm:ml-6 
+    <div className="flex grow flex-col items-center justify-center h-auto p-6 md:ml-6 
       border rounded-xl border-gray-800 dark:border-gray-400 shadow-2xl"
     >
       <Form {...form}>
