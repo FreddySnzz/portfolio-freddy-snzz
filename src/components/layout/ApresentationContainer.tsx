@@ -1,5 +1,5 @@
 import { useDragScroll } from "@/data/hook/useDragScroll";
-import { ButtonOverflowRight } from "../Button";
+import { ButtonOverflowRight, ButtonWhatsapp } from "../Button";
 
 export default function ApresentationContainer() {
   const scrollRef = useDragScroll<HTMLDivElement>()
@@ -8,16 +8,17 @@ export default function ApresentationContainer() {
 
   return (
     <section id="home" className="flex flex-col h-screen w-full scroll-hidden">
-      <div className="md:flex grow items-center justify-center mt-6 group scroll-hidden bg-amber-500 ">
-        <div className="flex flex-col items-center justify-center h-1/2 md:h-2/3 w-full transition-all duration-500 md:group-hover:w-3/4 bg-red-400 ">
+      <div className="md:flex grow items-center justify-center mt-6 group scroll-hidden ">
+        <div className="flex flex-col items-center justify-center h-1/2 md:h-2/3 w-full transition-all duration-500 md:group-hover:w-3/4 ">
           <h1 className="text-4xl text-center font-bold mb-4">
             Olá! Bem-vindo(a) ao meu Portfolio! :)
           </h1>
-          <p className="text-sm mb-8 text-center italic animate-pulse">
+          <p className="text-sm mb-8 text-center italic">
             Bom te ver por aqui.
           </p>
+          <ButtonWhatsapp />
         </div>
-        <div className="flex flex-col grow h-1/2 md:h-2/3 md:w-1/4 hover:w-full transition-all duration-500 scroll-hidden bg-white">
+        <div className="flex flex-col grow h-1/2 md:h-2/3 md:w-1/4 hover:w-full transition-all duration-500 scroll-hidden">
           <div
             ref={scrollRef}
             className="h-full overflow-x-auto scroll-hidden scroll-smooth-touch whitespace-nowrap select-none"

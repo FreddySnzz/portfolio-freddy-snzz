@@ -1,4 +1,4 @@
-import { FaChevronDown, FaChevronRight } from "react-icons/fa"; 
+import { FaChevronDown, FaChevronRight, FaWhatsapp } from "react-icons/fa"; 
 import { Button } from "./ui/button";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -29,6 +29,29 @@ export function ButtonOverflowRight({ className, section }: ButtonProps) {
         >
           <FaChevronRight />
         </Button>
+      </a>
+    </div>
+  );
+};
+
+export function ButtonWhatsapp() {
+  return (
+    <div className="items-center justify-center">
+      <a
+        href="https://wa.me/5586994147549?text=Olá, Fredson! Podemos agendar uma reunião?"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button 
+          className={`flex rounded-4xl bg-transparent hover:bg-green-600 hover:text-white transition-colors duration-500 ease-in-out 
+            border border-foreground gap-2 justify-center items-center cursor-pointer px-5 py-3
+            animate-gradient-x shadow-xl`}
+        >
+          <FaWhatsapp className="text-2xl" />
+          <span className="font-bold text-xl animate-pulse hover:animate-none">
+            Vamos conversar?
+          </span>
+        </button>
       </a>
     </div>
   );
