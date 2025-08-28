@@ -17,9 +17,7 @@ export default function Home() {
     <BackgroundGradientContainer>
       <Navbar />
       <ApresentationContainer />
-      <Layout className="p-6">
-        <AboutContainer />
-      </Layout>
+      <AboutContainer />
       <ProjectsContainer />
       <Layout className="p-6">
         <ContactContainer />
