@@ -16,7 +16,5 @@ export default function PictureFrame({ src, size, width, height }: PictureFrameP
       alt="Picture" width={500} height={500}
       className={`rounded-lg object-cover ${picSize}`}
     />
-    // <div className={`p-4 bg-white rounded-xl ${divSize}`}>
-    // </div>
   )
 }

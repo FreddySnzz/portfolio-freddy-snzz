@@ -1,4 +1,5 @@
 import { ButtonScrollDown } from "../Button";
+import PictureFrame from "../PictureFrame";
 import MosaicoContainer from "./PictureContainer";
 
 export default function AboutContainer() {
@@ -16,9 +17,9 @@ export default function AboutContainer() {
             <span className="text-gray-500 font-mono text-5xl">
               EU DESENVOLVO APLICAÇÕES CUSTOMIZADAS <br></br> PARA WEB E SOU ENTUSIASTA DE UX DESIGN.
             </span>
-            <div className="flex mt-10 ml-8 md:ml-32 mb-16">
-              <div className="w-32 h-32 bg-gray-800">
-                GIF ANIMADO / PIC
+            <div className="flex mt-10 ml-8 md:ml-32 mb-10 ">
+              <div className="flex w-40 h-40 justify-center items-center">
+                <PictureFrame src="/images/profile-cartoon.png" size={60} />
               </div>
               <div className="flex flex-col justify-center ml-8">
                 <p className="text-xl">
