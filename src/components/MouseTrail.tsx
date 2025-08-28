@@ -1,61 +1,47 @@
-"use client";
+'use client'
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+
+type TrailDot = {
+  id: number
+  x: number
+  y: number
+}
 
 export default function MouseTrail() {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [trail, setTrail] = useState<TrailDot[]>([])
 
   useEffect(() => {
-    const canvas = canvasRef.current!;
-    const ctx = canvas.getContext("2d")!;
-    let width = window.innerWidth;
-    let height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
-
-    const particles: { x: number; y: number; alpha: number }[] = [];
-
+    let id = 0
     const handleMouseMove = (e: MouseEvent) => {
-      particles.push({ x: e.clientX, y: e.clientY, alpha: 1 });
-    };
+      id++
+      const newDot = { id, x: e.clientX, y: e.clientY }
+      setTrail((prev) => [...prev.slice(-15), newDot])
+    }
 
-    const animate = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 6, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
-        ctx.fill();
-        p.alpha -= 0.02;
-        if (p.alpha <= 0) {
-          particles.splice(i, 1);
-          i--;
-        }
-      }
-
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("resize", () => {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
-    });
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => window.removeEventListener("mousemove", handleMouseMove)
+  }, [])
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 pointer-events-none"
-    />
-  );
+    <div className="fixed inset-0 pointer-events-none">
+      <AnimatePresence>
+        {trail.map((dot) => (
+          <motion.div
+            key={dot.id}
+            initial={{ opacity: 1, scale: 1 }}
+            animate={{ opacity: 0, scale: 0.5 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="absolute w-2 h-2 bg-blue-500 rounded-full"
+            style={{
+              left: dot.x - 4,
+              top: dot.y - 4,
+            }}
+          />
+        ))}
+      </AnimatePresence>
+    </div>
+  )
 }

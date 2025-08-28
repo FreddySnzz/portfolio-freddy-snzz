@@ -2,7 +2,10 @@
 
 import AboutContainer from "@/components/layout/AboutContainer";
 import ApresentationContainer from "@/components/layout/ApresentationContainer";
-import { BackgroundGradientContainer } from "@/components/layout/Background";
+import { 
+  RBGAnimatedBackground, 
+  BackgroundGradientContainer 
+} from "@/components/layout/Background";
 import ContactContainer from "@/components/layout/ContactContainer";
 import Footer from "@/components/layout/Footer";
 import Layout from "@/components/layout/Layout";
@@ -16,7 +19,9 @@ export default function Home() {
       <ApresentationContainer />
       <Layout className="p-6">
         <AboutContainer />
-        <ProjectsContainer />
+      </Layout>
+      <ProjectsContainer />
+      <Layout className="p-6">
         <ContactContainer />
       </Layout>
       <Footer />

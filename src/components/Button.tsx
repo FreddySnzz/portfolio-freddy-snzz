@@ -48,8 +48,8 @@ export function ButtonWhatsapp() {
             animate-gradient-x shadow-xl`}
         >
           <FaWhatsapp className="text-2xl" />
-          <span className="font-bold text-xl animate-pulse hover:animate-none">
-            Vamos conversar?
+          <span className="font-bold md:text-xl">
+            Mande-me uma mensagem
           </span>
         </button>
       </a>

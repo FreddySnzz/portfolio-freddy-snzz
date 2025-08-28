@@ -1,17 +1,16 @@
+import CardContainer from "./CardsContainer";
 import { ButtonScrollDown } from "../Button";
 
 export default function ProjectsContainer() {
   return (
-    <section id="projetos" className="flex flex-col items-center justify-center h-screen">
-      <div className="h-4/5">
-        <h1>
-          Projetos
-        </h1>
-        <h2>
-          informações sobre projetos
-        </h2>
+    <section id="projetos" className="flex flex-col h-screen overflow-hidden" >
+      <h1>
+        PROJETOS
+      </h1>
+      <div className="grow">
+        <CardContainer quantity={10} type="section" />
       </div>
-      <div>
+      <div className="flex justify-center items-center" >
         <ButtonScrollDown section="contato" />
       </div>
     </section>
