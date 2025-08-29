@@ -17,9 +17,9 @@ export default function AboutContainer() {
             <span className="text-gray-500 font-mono text-5xl">
               EU DESENVOLVO APLICAÇÕES CUSTOMIZADAS <br></br> PARA WEB E SOU ENTUSIASTA DE UX DESIGN.
             </span>
-            <div className="flex mt-10 ml-8 md:ml-32 mb-10 ">
-              <div className="flex w-40 h-40 justify-center items-center">
-                <PictureFrame src="/images/profile-cartoon.png" size={60} />
+            <div className="flex mt-10 ml-8 md:ml-32">
+              <div className="flex w-1/2 h-1/2 sm:w-40 justify-center items-center">
+                <PictureFrame src="/images/profile-cartoon.png" size={300} />
               </div>
               <div className="flex flex-col justify-center ml-8">
                 <p className="text-xl">
@@ -40,7 +40,7 @@ export default function AboutContainer() {
                   Apaixonado por games
                 </p>
                 <p className="text-xl text-gray-500">
-                  Música e esportes
+                  Carros clássicos e esportes
                 </p>
               </div>
             </div>
@@ -51,7 +51,7 @@ export default function AboutContainer() {
         <h1 className="text-gray-600 font-bold">
           MINHA <br></br> HISTÓRIA
         </h1>
-        <div className="ml-4 md:ml-16 md:w-4/5">
+        <div className="ml-4 xl:ml-16 md:w-4/5">
           <p className="text-gray-200">
             Estou na área de desenvolvimento desde 2021 — mas desde 2018, quando me vi interessado em fazer o curso da linguagem Python
             no canal do Gustavo Guanabara. Ali foi onde conheci os horizontes da programação e desenvolvimento. <br></br><br></br>
