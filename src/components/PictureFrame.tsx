@@ -9,10 +9,11 @@ export default function PictureFrame({ src, size }: PictureFrameProps) {
   const picSize = `w-${size} h-${size}`;
   
   return (
-    <div>
+    <div onContextMenu={(e) => e.preventDefault()}>
       <Image 
         src={src} 
         alt="Picture" width={500} height={500}
+        draggable="false"
         className={`rounded-lg object-cover ${picSize}`}
       />
     </div>

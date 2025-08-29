@@ -15,14 +15,14 @@ export default function ApresentationContainer() {
           className="flex flex-col items-center justify-center h-2/5 md:h-2/3 w-full transition-all duration-500 md:group-hover:w-3/4"
         >
           <TextAnimated /> 
-          <div className="flex justify-center items-center gap-8 md:gap-24 mt-12">
+          <motion.div className="flex justify-center items-center gap-8 md:gap-24 mt-12">
             <ButtonWhatsapp />
             <PonteEstaiadaClock />
-          </div>
+          </motion.div>
         </motion.div>
-        <CardContainer quantity={5} type="apresentation"/>
+        <CardContainer quantity={3} type="apresentation"/>
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex h-20 justify-center items-center">
         <ButtonScrollDown section="sobre" />
       </div>
     </section>

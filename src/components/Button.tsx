@@ -1,4 +1,5 @@
 import { FaChevronDown, FaChevronRight, FaWhatsapp } from "react-icons/fa"; 
+import * as motion from "motion/react-client"
 import { Button } from "./ui/button";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -36,7 +37,10 @@ export function ButtonOverflowRight({ className, section }: ButtonProps) {
 
 export function ButtonWhatsapp() {
   return (
-    <div className="items-center justify-center">
+    <motion.div 
+      whileHover={{ scale: 1.3 }}
+      className="items-center justify-center"
+    >
       <a
         href="https://wa.me/5586994147549?text=Olá, Fredson! Podemos agendar uma reunião?"
         target="_blank"
@@ -48,11 +52,13 @@ export function ButtonWhatsapp() {
             animate-gradient-x shadow-xl`}
         >
           <FaWhatsapp className="text-2xl" />
-          <span className="font-bold text-sm md:text-xl">
+          <span 
+            className="font-bold text-sm md:text-xl"
+          >
             Mande-me uma mensagem
           </span>
         </button>
       </a>
-    </div>
+    </motion.div>
   );
 };

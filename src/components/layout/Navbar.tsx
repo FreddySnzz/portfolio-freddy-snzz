@@ -1,33 +1,49 @@
-import { AiFillHome } from "react-icons/ai";
 import Link from "next/link";
+import * as motion from "motion/react-client"
+import { AiFillHome } from "react-icons/ai";
 import { Separator } from "../ui/separator";
 import { ThemeToggle } from "../ThemeToggleButton";
-import { useEffect, useState } from "react";
+import { useMediaQuery } from "@/data/hook/useMediaQuery";
+import useScrollDirection from "@/data/hook/useScrollDetect";
 
 interface NavbarProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
 }
 
 export default function Navbar({ className }: NavbarProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
   const linkClassName = `hover:text-blue-400 transition-colors font-semibold duration-300 dark:hover:text-gray-400`
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 80);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { isScrolled, scrollDirection, isAtTop } = useScrollDirection();
+  const isMdUp = useMediaQuery("(min-width: 768px)");
 
   return (
-    <header className="fixed flex mt-4 w-full justify-center z-50">
-      <div className={`flex gap-3 md:gap-6 px-6 py-2 w-full md:text-lg items-center justify-center md:w-10/12 md:rounded-full 
-        shadow-lg text-gray-200 ${
-          isScrolled ? `bg-transparent backdrop-blur-sm dark:text-black` 
-          : `bg-gradient-to-l from-gray-800 to-gray-900 dark:from-gray-200 dark:to-gray-100 dark:text-gray-900`
-        } ${className}`}
+    <motion.header 
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`fixed flex w-full justify-center z-50
+        ${isScrolled && scrollDirection === 'down' ? 'mt-0 md:mt-4' : ''}`
+      }
+    >
+      <motion.div 
+        animate={{
+          paddingTop: isScrolled && scrollDirection === "down" ? 8 : 24,
+          paddingBottom: isScrolled && scrollDirection === "down" ? 8 : 24,
+          width: isScrolled && scrollDirection === "down" && isMdUp ? "80%" : "100%",
+          borderRadius: isScrolled && scrollDirection === "down" && isMdUp ? 999 : 0,
+          backgroundColor: isAtTop
+            ? "#ffffff00"
+            : scrollDirection === "down"
+            ? "rgba(0, 0, 0, 0)"
+            : "#000000",
+          backdropFilter: "blur(6px)"
+        }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className={`flex gap-2 md:gap-6 px-6 md:px-12 items-center justify-center shadow-lg text-gray-200 
+          ${isScrolled && scrollDirection === 'down' ? 'md:w-10/12 md:rounded-full ' : 'md:w-full '}
+          ${isAtTop ? `bg-gradient-to-l from-gray-800 to-gray-900 dark:from-gray-200 dark:to-gray-100 dark:text-gray-900` : ``}
+          ${scrollDirection === 'down' ? `dark:text-black` : ``} 
+          ${className}`
+        }
       >
         <Link
           href="#home"
@@ -35,9 +51,14 @@ export default function Navbar({ className }: NavbarProps) {
         >
           <AiFillHome className="text-xl cursor-pointer"/>
           { isScrolled && (
-            <span className="hidden md:block ml-4 text-center justify-center items-center">
+            <motion.span 
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4 }}
+              className="hidden md:block ml-4 text-center justify-center items-center"
+            >
               Voltar para o início
-            </span>
+            </motion.span>
           )}
         </Link>
         <Link
@@ -62,7 +83,7 @@ export default function Navbar({ className }: NavbarProps) {
         <div>
           <ThemeToggle />
         </div>
-      </div>
-    </header>
+      </motion.div>
+    </motion.header>
   );
 };

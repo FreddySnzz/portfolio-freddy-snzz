@@ -22,7 +22,7 @@ export default function MosaicoContainer() {
         </div>
         <div className="flex justify-center items-center overflow-hidden w-70 h-60 xl:w-80 xl:h-70 p-4 rounded-xl bg-white shadow-lg">
           <div className="flex justify-center items-center w-full h-full object-cover overflow-hidden rounded-xl">
-            <PictureFrame src="/images/sport.png" size={600} />
+            <PictureFrame src="/images/sportive.png" size={600} />
           </div>
         </div>
       </div>

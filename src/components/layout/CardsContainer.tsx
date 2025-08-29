@@ -1,5 +1,7 @@
 import * as motion from "motion/react-client"
 import { useEffect, useRef, useState } from "react"
+import { Separator } from "../ui/separator";
+import PictureFrame from "../PictureFrame";
 
 interface CardContainerProps extends React.HTMLAttributes<HTMLDivElement>{
   type?: 'apresentation' | 'section'
@@ -61,15 +63,17 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            className={`flex items-center justify-center min-w-[350px] sm:min-w-[600px] h-2/3 rounded-4xl text-white font-bold ${
-              i % 2 === 0 ? "bg-blue-700" : "bg-purple-900"
-            }`}
+            className={`flex items-center justify-center min-w-[350px] sm:w-auto h-auto rounded-4xl p-6 object-cover overflow-hidden
+              ${i % 2 === 0 ? "bg-blue-700" : "bg-purple-900"}`
+            }
           >
-            <span>
-              Card {i + 1}
-            </span>
+            <div className="flex items-center justify-center w-88 h-88 object-cover overflow-hidden rounded-4xl text-white font-bold">
+              <PictureFrame src="/images/profile.png" />
+            </div>
           </motion.div>
         ))}
+        {/* <Separator orientation="horizontal" />
+        <span>teste</span> */}
       </motion.div>
     </motion.div>
   )

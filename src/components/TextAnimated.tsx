@@ -6,10 +6,10 @@ export default function TextAnimated() {
   const [displayedText, setDisplayedText] = useState("")
 
   const phrases = [
-    "Olá! Bem-vindo(a) ao meu Portfolio!",
-    "Meu nome é Fredson Luiz 😄",
+    "Olá! Seja bem-vindo(a) 💓",
+    "Meu nome é Fredson Luiz",
     "Sou Desenvolvedor Fullstack 💻",
-    "Vamos construir algo juntos? 🤝",
+    "Vamos construir algo juntos? 🫱🏼‍🫲🏼",
   ]
 
   useEffect(() => {
