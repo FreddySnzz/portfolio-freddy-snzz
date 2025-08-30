@@ -1,10 +1,12 @@
-import { FaChevronDown, FaChevronRight, FaWhatsapp } from "react-icons/fa"; 
+import { FaChevronDown, FaChevronLeft, FaChevronRight, FaWhatsapp } from "react-icons/fa"; 
 import * as motion from "motion/react-client"
 import { Button } from "./ui/button";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   section?: string;
+  direction?: 'left' | 'right';
+  onClick?: () => void;
 };
 
 export function ButtonScrollDown({ className, section }: ButtonProps) {
@@ -34,6 +36,17 @@ export function ButtonOverflowRight({ className, section }: ButtonProps) {
     </div>
   );
 };
+
+export function ButtonCarousel({ className, direction, onClick }: ButtonProps) {
+  return (
+    <Button
+      onClick={onClick}
+      className={`bg-transparent shadow-none hover:bg-transparent cursor-pointer ${className}`}
+    >
+      {direction === "left" ? <FaChevronLeft /> : <FaChevronRight />}
+    </Button>
+  );
+}
 
 export function ButtonWhatsapp() {
   return (

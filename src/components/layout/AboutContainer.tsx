@@ -1,8 +1,11 @@
+import { useMediaQuery } from "@/data/hook/useMediaQuery";
 import { ButtonScrollDown } from "../Button";
 import PictureFrame from "../PictureFrame";
 import MosaicoContainer from "./PictureContainer";
 
 export default function AboutContainer() {
+  const isMdUp = useMediaQuery("(min-width: 350px)");
+
   return (
     <section id="sobre" className="flex flex-col items-center justify-center h-auto">
       <div className="flex h-full w-full justify-center bg-gray-950 dark:bg-gray-300">
@@ -11,18 +14,18 @@ export default function AboutContainer() {
             SOBRE MIM
           </h1>
           <div className="mt-10">
-            <h1 className="font-mono text-5xl">
+            <h1 className="font-mono text-2xl md:text-5xl">
               PRAZER, FREDSON LUIZ 👋🏼
             </h1>
-            <span className="text-gray-500 font-mono text-5xl">
-              EU DESENVOLVO APLICAÇÕES CUSTOMIZADAS <br></br> PARA WEB E SOU ENTUSIASTA DE USER XPERIENCE.
+            <span className="text-gray-500 font-mono text-2xl md:text-5xl">
+              EU DESENVOLVO APLICAÇÕES CUSTOMIZADAS <br></br> PARA WEB E SOU ENTUSIASTA DE USER EXPERIENCE.
             </span>
             <div className="flex mt-10 ml-8 md:ml-32">
               <div className="flex w-1/2 h-1/2 sm:w-40 justify-center items-center">
                 <PictureFrame src="/images/profile-cartoon.png" size={300} />
               </div>
               <div className="flex flex-col justify-center ml-8">
-                <p className="text-xl">
+                <p className="text-md md:text-xl">
                   <span className="font-bold">
                     Fullstack Developer
                   </span>
@@ -36,10 +39,10 @@ export default function AboutContainer() {
                     {` — como hobby 😅`}
                   </span>
                 </p>
-                <p className="text-xl text-gray-500">
+                <p className="text-md md:text-xl text-gray-500">
                   Apaixonado por games
                 </p>
-                <p className="text-xl text-gray-500">
+                <p className="text-md md:text-xl text-gray-500">
                   Carros clássicos e esportes
                 </p>
               </div>
@@ -52,7 +55,7 @@ export default function AboutContainer() {
           MINHA <br></br> HISTÓRIA
         </h1>
         <div className="ml-4 xl:ml-16 md:w-4/5">
-          <p className="text-gray-200 dark:text-gray-950">
+          <p className="text-gray-200 dark:text-gray-950 text-sm md:text-lg">
             Estou na área de desenvolvimento desde 2021 — mas desde 2018, quando me vi interessado em fazer o curso da linguagem Python
             no canal do Gustavo Guanabara. Ali foi onde conheci os horizontes da programação e desenvolvimento. <br></br><br></br>
 
@@ -83,6 +86,11 @@ export default function AboutContainer() {
           <MosaicoContainer />
         </div>
       </div>
+      {isMdUp && (
+        <div className="flex justify-center mt-8 w-full md:hidden">
+          <MosaicoContainer />
+        </div>
+      )}
       <div className="flex flex-col items-center justify-center mt-16 mb-8">
         <ButtonScrollDown section="projetos" />
       </div>

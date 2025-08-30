@@ -56,7 +56,7 @@ export default function FormContainer() {
                   <FormControl>
                     <Input 
                       placeholder="João" {...field} 
-                      className="mt-2 border border-gray-800 dark:border-gray-400 focus:border-0 focus:stroke-none" 
+                      className="mt-2 border border-gray-800 dark:border-gray-400 focus:outline-none"
                     />
                   </FormControl>
                   <FormMessage />
@@ -68,7 +68,7 @@ export default function FormContainer() {
                   <FormControl>
                     <Input 
                     placeholder="joao@mail.com" {...field} 
-                    className="mt-2 border border-gray-800 dark:border-gray-400 focus:border-0 focus:stroke-none" 
+                    className="mt-2 border border-gray-800 dark:border-gray-400 focus:outline-none" 
                   />
                   </FormControl>
                   <FormMessage />
@@ -82,10 +82,15 @@ export default function FormContainer() {
             </FormLabel>
             <Textarea 
               placeholder="Fique a vontade para escrever sua mensagem ou sua dúvida." 
-              className="border border-gray-800 dark:border-gray-400 focus:border-0 focus:stroke-none"
+              className="border border-gray-800 dark:border-gray-400 focus:outline-none"
             />
           </div>
-          <Button type="submit">Enviar</Button>
+          <Button 
+            type="submit"
+            className="hover:bg-blue-400 font-bold"
+          >
+            Enviar
+          </Button>
         </form>
       </Form>
     </div>

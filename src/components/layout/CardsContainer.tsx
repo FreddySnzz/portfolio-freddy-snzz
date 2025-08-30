@@ -1,7 +1,7 @@
 import * as motion from "motion/react-client"
-import { useEffect, useRef, useState } from "react"
-import { Separator } from "../ui/separator";
-import PictureFrame from "../PictureFrame";
+import { projects } from "@/data/constants/projectsList";
+import { useMouseDrag } from "@/data/hook/useMouseDrag";
+import CardItem from "./CardItem";
 
 interface CardContainerProps extends React.HTMLAttributes<HTMLDivElement>{
   type?: 'apresentation' | 'section'
@@ -9,16 +9,7 @@ interface CardContainerProps extends React.HTMLAttributes<HTMLDivElement>{
 };
 
 export default function CardContainer({ type, quantity }: CardContainerProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [dragLeft, setDragLeft] = useState(0);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      const containerWidth = containerRef.current.offsetWidth
-      const contentWidth = containerRef.current.scrollWidth
-      setDragLeft(containerWidth - contentWidth)
-    }
-  }, [quantity])
+  const { containerRef, dragLeft } = useMouseDrag(quantity);
 
   return type === 'apresentation' ? (
     <motion.div
@@ -57,23 +48,12 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
         dragElastic={0.2}
         className="flex items-center h-full gap-12 sm:ml-12 select-none cursor-grab active:cursor-grabbing"
       >
-        {[...Array(quantity)].map((_, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            className={`flex items-center justify-center min-w-[350px] sm:w-auto h-auto rounded-4xl p-6 object-cover overflow-hidden
-              ${i % 2 === 0 ? "bg-blue-700" : "bg-purple-900"}`
-            }
-          >
-            <div className="flex items-center justify-center w-88 h-88 object-cover overflow-hidden rounded-4xl text-white font-bold">
-              <PictureFrame src="/images/profile.png" />
-            </div>
-          </motion.div>
+        {projects.map((project) => (
+          <CardItem 
+            key={project.name} 
+            project={project} 
+          />
         ))}
-        {/* <Separator orientation="horizontal" />
-        <span>teste</span> */}
       </motion.div>
     </motion.div>
   )

@@ -10,6 +10,7 @@ export default function TextAnimated() {
     "Meu nome é Fredson Luiz",
     "Sou Desenvolvedor Fullstack 💻",
     "Vamos construir algo juntos? 🫱🏼‍🫲🏼",
+    "FAZ UM BOTÃO PARA MUDAR LING PT/EN",
   ]
 
   useEffect(() => {
