@@ -1,3 +1,4 @@
+import * as motion from "motion/react-client"
 import { 
   MdOutlineMailOutline, 
   MdOutlineLocationOn, 
@@ -6,8 +7,7 @@ import {
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaRegNewspaper } from "react-icons/fa6";
-import * as motion from "motion/react-client"
-import FormContainer from "./FormContainer";
+import FormContainer from "./form/FormContainer";
 import Tittle from "./Tittle";
 import openLinkOnButton from "@/data/functions/openNewWindowButton";
 

@@ -1,5 +1,3 @@
-'use client';
-
 import useAppData from "@/data/hook/useAppData";
 import LayoutContent from "./LayoutContent";
 

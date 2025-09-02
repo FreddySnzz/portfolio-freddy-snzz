@@ -1,7 +1,7 @@
 import * as motion from "motion/react-client"
 import CardContainer from "./CardsContainer";
-import { ButtonScrollDown } from "../Button";
 import { projects } from "@/data/constants/projectsList";
+import ButtonScrollDown from "../buttons/ButtonScrollDown";
 
 export default function ProjectsContainer() {
   return (

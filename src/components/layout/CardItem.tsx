@@ -1,9 +1,9 @@
 import { useState } from "react";
 import * as motion from "motion/react-client"
 import PictureFrame from "../PictureFrame";
-import { ButtonCarousel } from "../Button";
 import { Separator } from "../ui/separator";
 import { useIsTouchDevice } from "@/data/hook/useMouseDrag";
+import ButtonCarousel from "../buttons/ButtonCarousel";
 
 export default function CardItem({ project }: { project: any }) {
   const [currentIndex, setCurrentIndex] = useState(0);

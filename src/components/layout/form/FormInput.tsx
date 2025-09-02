@@ -1,17 +1,24 @@
 import { z } from "zod"
+import { 
+  FormControl, 
+  FormField, 
+  FormItem, 
+  FormLabel, 
+  FormMessage 
+} from "../../ui/form"
+import { Input } from "../../ui/input"
 import { formSchema } from "@/data/schemas/form.schema"
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form"
-import { Textarea } from "../ui/textarea"
 
 type FormValues = z.infer<typeof formSchema>
 
-interface FormTextareaProps {
+interface FormInputProps {
   name: keyof FormValues
   label: string
   placeholder: string
+  type?: string
 }
 
-export default function FormTextArea({ name, label, placeholder }: FormTextareaProps) {
+export default function FormInput({ name, label, placeholder, type = "text" }: FormInputProps) {
   return (
     <FormField
       name={name}
@@ -21,7 +28,8 @@ export default function FormTextArea({ name, label, placeholder }: FormTextareaP
             {label}
           </FormLabel>
           <FormControl>
-            <Textarea
+            <Input
+              type={type}
               placeholder={placeholder}
               {...field}
               className="mt-2 border border-gray-800 dark:border-gray-400 focus:outline-none"

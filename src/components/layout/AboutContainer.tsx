@@ -1,8 +1,8 @@
 import * as motion from "motion/react-client"
 import { useMediaQuery } from "@/data/hook/useMediaQuery";
-import { ButtonScrollDown } from "../Button";
 import PictureFrame from "../PictureFrame";
 import MosaicoContainer from "./PictureContainer";
+import ButtonScrollDown from "../buttons/ButtonScrollDown";
 
 export default function AboutContainer() {
   const isMdUp = useMediaQuery("(min-width: 350px)");
@@ -121,9 +121,9 @@ export default function AboutContainer() {
         </motion.div>
         <motion.div 
           className="hidden md:block w-full"
-          initial={{ x: -100, opacity: 0 }}
+          initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 50, duration: 0.8 }}
+          transition={{ type: "spring", stiffness: 20, duration: 0.8 }}
           viewport={{ once: false }}
         >
           <MosaicoContainer />

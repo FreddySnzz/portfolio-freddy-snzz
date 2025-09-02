@@ -1,16 +1,16 @@
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { toast } from "sonner"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { toast } from "sonner"
+import { AiOutlineLoading } from "react-icons/ai";
+import { IoBan, IoCheckmarkDone } from "react-icons/io5";
 import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
 import { formSchema } from "@/data/schemas/form.schema"
-import { IoBan, IoCheckmarkDone } from "react-icons/io5";
-import { AiOutlineLoading } from "react-icons/ai";
 import { sendSimpleMessage } from "@/services/Mailer.service"
 import FormInput from "./FormInput"
 import FormTextArea from "./FormTextArea"
-import { useState } from "react"
 
 type FormValues = z.infer<typeof formSchema>
 
