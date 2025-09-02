@@ -2,6 +2,7 @@ import * as motion from "motion/react-client"
 import { projects } from "@/data/constants/projectsList";
 import { useMouseDrag } from "@/data/hook/useMouseDrag";
 import CardItem from "./CardItem";
+import { apresentationInfos } from "@/data/constants/apresentationInfo";
 
 interface CardContainerProps extends React.HTMLAttributes<HTMLDivElement>{
   type?: 'apresentation' | 'section'
@@ -22,17 +23,15 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
         dragElastic={0.2}
         className="flex h-full gap-4 px-4 select-none cursor-grab active:cursor-grabbing"
       >
-        {[...Array(quantity)].map((_, i) => (
+        {apresentationInfos.map(info => (
           <motion.div
-            key={i}
+            key={info.name}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            className={`flex items-center justify-center min-w-[400px] h-full rounded-4xl text-white font-bold ${
-              i % 2 === 0 ? "bg-blue-500" : "bg-purple-700"
-            }`}
+            className={`flex items-center justify-center min-w-[400px] h-full rounded-4xl text-white font-bold bg-gray-500`}
           >
-            Card {i + 1}
+            a
           </motion.div>
         ))}
       </motion.div>

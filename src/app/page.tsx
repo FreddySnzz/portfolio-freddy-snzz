@@ -11,10 +11,12 @@ import Footer from "@/components/layout/Footer";
 import Layout from "@/components/layout/Layout";
 import Navbar from "@/components/layout/Navbar";
 import ProjectsContainer from "@/components/layout/ProjectsContainer";
+import { Toaster } from "sonner";
 
 export default function Home() {
   return (
     <BackgroundGradientContainer>
+      <Toaster />
       <Navbar />
       <ApresentationContainer />
       <AboutContainer />

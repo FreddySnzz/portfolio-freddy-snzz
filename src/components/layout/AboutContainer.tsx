@@ -1,3 +1,4 @@
+import * as motion from "motion/react-client"
 import { useMediaQuery } from "@/data/hook/useMediaQuery";
 import { ButtonScrollDown } from "../Button";
 import PictureFrame from "../PictureFrame";
@@ -7,24 +8,50 @@ export default function AboutContainer() {
   const isMdUp = useMediaQuery("(min-width: 350px)");
 
   return (
-    <section id="sobre" className="flex flex-col items-center justify-center h-auto">
+    <section 
+      id="sobre" 
+      className="flex flex-col items-center justify-center h-auto"
+    >
       <div className="flex h-full w-full justify-center bg-gray-950 dark:bg-gray-300">
         <div className="w-10/12">
-          <h1 className="mt-24 text-xl font-mono font-bold tracking-widest text-gray-600">
+          <motion.h1 
+            className="mt-24 text-xl font-mono font-bold tracking-widest text-gray-600"
+            initial={{ y: -100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
             SOBRE MIM
-          </h1>
+          </motion.h1>
           <div className="mt-10">
-            <h1 className="font-mono text-2xl md:text-5xl">
+            <motion.h1 
+              className="font-mono text-2xl md:text-5xl"
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 50, duration: 0.8 }}
+              viewport={{ once: false }}
+            >
               PRAZER, FREDSON LUIZ 👋🏼
-            </h1>
-            <span className="text-gray-500 font-mono text-2xl md:text-5xl">
+            </motion.h1>
+            <motion.p 
+              className="text-gray-500 font-mono text-2xl md:text-5xl"
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 50, duration: 1 }}
+              viewport={{ once: false }}
+            >
               EU DESENVOLVO APLICAÇÕES CUSTOMIZADAS <br></br> PARA WEB E SOU ENTUSIASTA DE USER EXPERIENCE.
-            </span>
+            </motion.p>
             <div className="flex mt-10 ml-8 md:ml-32">
               <div className="flex w-1/2 h-1/2 sm:w-40 justify-center items-center">
                 <PictureFrame src="/images/profile-cartoon.png" size={300} />
               </div>
-              <div className="flex flex-col justify-center ml-8">
+              <motion.div 
+                className="flex flex-col justify-center ml-8"
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ type: "spring", stiffness: 50, duration: 0.8 }}
+                viewport={{ once: false }}
+              >
                 <p className="text-md md:text-xl">
                   <span className="font-bold">
                     Fullstack Developer
@@ -45,17 +72,27 @@ export default function AboutContainer() {
                 <p className="text-md md:text-xl text-gray-500">
                   Carros clássicos e esportes
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </div>
       <div className="flex w-10/12 mt-16">
-        <h1 className="text-gray-600 font-bold">
+        <motion.h1 
+          className="text-gray-600 font-bold"
+          initial={{ y: -100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
           MINHA <br></br> HISTÓRIA
-        </h1>
-        <div className="ml-4 xl:ml-16 md:w-4/5">
-          <p className="text-gray-200 dark:text-gray-950 text-sm md:text-lg">
+        </motion.h1>
+        <motion.div 
+          className="ml-4 xl:ml-16 md:w-4/5"
+          initial={{ y: -100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <p className="text-gray-200 dark:text-gray-950 text-sm 2xl:text-lg">
             Estou na área de desenvolvimento desde 2021 — mas desde 2018, quando me vi interessado em fazer o curso da linguagem Python
             no canal do Gustavo Guanabara. Ali foi onde conheci os horizontes da programação e desenvolvimento. <br></br><br></br>
 
@@ -81,10 +118,16 @@ export default function AboutContainer() {
             Quando não estou projetando ou criando, estou buscando inspiração fora das telas — amo tocar, ouvir uma boa música, explorar coisas novas, 
             viver novas experiências, praticar esportes — tanto tradicional, quanto eSports.
           </p>
-        </div>
-        <div className="hidden md:block w-full">
+        </motion.div>
+        <motion.div 
+          className="hidden md:block w-full"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 50, duration: 0.8 }}
+          viewport={{ once: false }}
+        >
           <MosaicoContainer />
-        </div>
+        </motion.div>
       </div>
       {isMdUp && (
         <div className="flex justify-center mt-8 w-full md:hidden">

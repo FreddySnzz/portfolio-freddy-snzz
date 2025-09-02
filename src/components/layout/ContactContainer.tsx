@@ -14,13 +14,25 @@ import openLinkOnButton from "@/data/functions/openNewWindowButton";
 export default function ContactContainer() {
   return (
     <section id="contato" className="mb-24">
-      <Tittle 
-        tittle="Entre em contato" 
-        subtitle="Tem alguma dúvida ou deseja algum serviço? Sinta-se à vontade para me enviar uma mensagem!"
-        tittleClassName="font-bold"
-        subtitleClassName="text-sm text-muted-foreground mt-1"
-      />
-      <div className="md:flex items-start justify-start mt-14">
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Tittle 
+          tittle="Entre em contato" 
+          subtitle="Tem alguma dúvida ou deseja algum serviço? Sinta-se à vontade para me enviar uma mensagem!"
+          tittleClassName="font-bold"
+          subtitleClassName="text-sm text-muted-foreground mt-1"
+        />
+      </motion.div>
+      <motion.div 
+        className="md:flex items-start justify-start mt-14"
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 50, duration: 0.8 }}
+        viewport={{ once: false }}
+      >
         <div className="flex flex-col mb-6">
           <h3 className="font-bold">
             Informações de contato
@@ -98,7 +110,7 @@ export default function ContactContainer() {
           </div>
         </div>
         <FormContainer />
-      </div>
+      </motion.div>
     </section>
   )
 }
