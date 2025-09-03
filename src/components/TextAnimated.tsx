@@ -1,17 +1,10 @@
 import { useEffect, useState } from "react";
 import * as motion from "motion/react-client"
+import { phrases } from "@/data/constants/apresentationInfo";
 
 export default function TextAnimated() {
   const [index, setIndex] = useState(0)
   const [displayedText, setDisplayedText] = useState("")
-
-  const phrases = [
-    "Olá! Seja bem-vindo(a) 💓",
-    "Meu nome é Fredson Luiz",
-    "Sou Desenvolvedor Fullstack 💻",
-    "Vamos construir algo juntos? 🫱🏼‍🫲🏼",
-    "FAZ UM BOTÃO PARA MUDAR LING PT/EN",
-  ]
 
   useEffect(() => {
     let timeout: NodeJS.Timeout
@@ -37,7 +30,7 @@ export default function TextAnimated() {
   return (
     <motion.span
       key={index}
-      className="text-4xl text-center font-bold"
+      className="text-2xl md:text-4xl text-center font-bold"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}

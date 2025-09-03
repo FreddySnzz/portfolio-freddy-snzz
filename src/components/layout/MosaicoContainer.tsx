@@ -6,7 +6,6 @@ export default function MosaicoContainer() {
       <div className="grid grid-cols-1 xl:flex xl:flex-col gap-8">
         <div className="flex justify-center items-center overflow-hidden w-70 h-60 xl:w-80 xl:h-70 p-4 rounded-xl bg-white shadow-lg">
           <div className="flex justify-center items-center w-full h-full object-cover overflow-hidden rounded-xl">
-            
             <PictureFrame src="/images/playing-drums2.png" size={600} />
           </div>
         </div>

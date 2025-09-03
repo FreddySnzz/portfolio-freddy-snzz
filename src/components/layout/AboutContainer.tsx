@@ -1,7 +1,7 @@
 import * as motion from "motion/react-client"
 import { useMediaQuery } from "@/data/hook/useMediaQuery";
 import PictureFrame from "../PictureFrame";
-import MosaicoContainer from "./PictureContainer";
+import MosaicoContainer from "./MosaicoContainer";
 import ButtonScrollDown from "../buttons/ButtonScrollDown";
 
 export default function AboutContainer() {
@@ -39,7 +39,7 @@ export default function AboutContainer() {
               transition={{ type: "spring", stiffness: 50, duration: 1 }}
               viewport={{ once: false }}
             >
-              EU DESENVOLVO APLICAÇÕES CUSTOMIZADAS <br></br> PARA WEB E SOU ENTUSIASTA DE USER EXPERIENCE.
+              EU DESENVOLVO APLICAÇÕES CUSTOMIZADAS <br /> PARA WEB E SOU ENTUSIASTA DE USER EXPERIENCE.
             </motion.p>
             <div className="flex mt-10 ml-8 md:ml-32">
               <div className="flex w-1/2 h-1/2 sm:w-40 justify-center items-center">
@@ -84,7 +84,7 @@ export default function AboutContainer() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          MINHA <br></br> HISTÓRIA
+          MINHA <br /> HISTÓRIA
         </motion.h1>
         <motion.div 
           className="ml-4 xl:ml-16 md:w-4/5"
@@ -94,37 +94,37 @@ export default function AboutContainer() {
         >
           <p className="text-gray-200 dark:text-gray-950 text-sm 2xl:text-lg">
             Estou na área de desenvolvimento desde 2021 — mas desde 2018, quando me vi interessado em fazer o curso da linguagem Python
-            no canal do Gustavo Guanabara. Ali foi onde conheci os horizontes da programação e desenvolvimento. <br></br><br></br>
+            no canal do Gustavo Guanabara. Ali foi onde conheci os horizontes da programação e desenvolvimento. <br /><br />
 
-            Após esse contato inicial, tive um breve hiato nos estudos, pois servi as Forças Armadas Brasileiras como soldado. <br></br><br></br>
+            Após esse contato inicial, tive um breve hiato nos estudos, pois servi as Forças Armadas Brasileiras como soldado. <br /><br />
             Em 2021, iniciei em um pequeno projeto chamado 
             CEFITEM — uma plataforma de auditoria de documentos fiscais. Esse foi meu start na carreira e meu primeiro contato com um
-            projeto real. <br></br><br></br>
+            projeto real. <br /><br />
             
             Ao longo desses anos, trabalhei em algumas empresas de tecnologia. IRRF, Elliptic Technology  esta última tendo dois 
             projetos muito importantes. A Solvee — uma plataforma de intermediação para serviços domésticos. Onde você escolhe um
             ou mais serviços para sua casa ou ambiente de trabalho, e um(a) diarista irá até realizar o serviço.
             E também o BioFaceID — uma plataforma robusta de controle de acesso de pessoas por meio da integração com terminais
-            de reconhecimento facial. Sem dúvidas, o projeto mais complexo que já trabalhei até hoje. <br></br><br></br>
+            de reconhecimento facial. Sem dúvidas, o projeto mais complexo que já trabalhei até hoje. <br /><br />
 
             O maior desafio não foi técnico, foi regra de negócio. Criar uma API que se comunicava com uma API externa da Hikvision — empresa 
             no qual fabrica os terminais, não foi uma tarefa fácil. Com um equipe bem pequena, apenas três devs e um ux/ui designer,
-            as demandas foram bastante altas e corridas. <br></br><br></br>
+            as demandas foram bastante altas e corridas. <br /><br />
 
             Por fim, e não menos importante, a Secretaria de Educação do Estado do Piauí - SEDUC. Lá pude aprimorar 200% minhas habilidades e conhecimentos
             sobre desenvolvimento, trabalho em equipe e responsabilidades. Aprendi desde infraestrutura, microfrontends, sistemas legados. Conheci
-            muitos frameworks que até então não tinha conhecimento, e isso me motivou a aprender cada vez mais. <br></br><br></br>
+            muitos frameworks que até então não tinha conhecimento, e isso me motivou a aprender cada vez mais. <br /><br />
 
             Quando não estou projetando ou criando, estou buscando inspiração fora das telas — amo tocar, ouvir uma boa música, explorar coisas novas, 
             viver novas experiências, praticar esportes — tanto tradicional, quanto eSports.
           </p>
         </motion.div>
         <motion.div 
-          className="hidden md:block w-full"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ type: "spring", stiffness: 20, duration: 0.8 }}
           viewport={{ once: false }}
+          className="hidden md:block w-full"
         >
           <MosaicoContainer />
         </motion.div>

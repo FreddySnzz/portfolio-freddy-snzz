@@ -1,4 +1,8 @@
-export const subtittleInfo = ['apresentation.js', 'information.js']
+export const subtittleInfo = [
+  'apresentation.js', 
+  'skills.js', 
+  'formation.js'
+]
 
 export const skills = {
   main: {
@@ -8,7 +12,7 @@ export const skills = {
   },
   frontend: {
     title: "Frontend",
-    list: ["React", "Next.js"],
+    list: ["Node.js", "React", "Next.js"],
   },
   backend: {
     title: "Backend",
@@ -21,11 +25,11 @@ export const skills = {
   },
   documentation: {
     title: "Documentação",
-    tools: ["Swagger", "Postman", "Docusaurus"],
+    tools: ["Swagger", "Postman", "Insomnia", "Docusaurus"],
   },
   others: {
     title: "Outras habilidades",
-    skills: ["Git", "Docker", "Jest", "RabbitMQ", "AWS SQS/S3"],
+    skills: ["Git", "Docker", "Jest", "RabbitMQ", "Redis", "Firebase", "Supabase", "AWS SNS/SES/S3"],
   },
 };
 
@@ -38,14 +42,14 @@ export const education = {
   },
   complementary: [
     {
-      course: "Next.js & React.js - Baseado em Projetos",
-      place: "Cod3r",
-      year: "2025",
-    },
-    {
       course: "Nest.js e React.js do zero ao avançado com Typescript",
       place: "Udemy",
       year: "2024",
+    },
+    {
+      course: "Next.js & React.js - Baseado em Projetos",
+      place: "Cod3r",
+      year: "2025",
     },
   ],
 };
@@ -56,5 +60,14 @@ export const languages = [
     level: "Intermediário B1",
     institution: "EF English Live",
     certificate: "https://cert.efset.org/en/CxUW2u",
+    year: "2025",
   },
+];
+
+export const phrases = [
+  "Olá! Seja bem-vindo(a) 💓",
+  "Meu nome é Fredson Luiz",
+  "Sou Desenvolvedor Fullstack 💻",
+  "Vamos construir algo juntos? 🫱🏼‍🫲🏼",
+  "FAZ UM BOTÃO PARA MUDAR LING PT/EN",
 ];

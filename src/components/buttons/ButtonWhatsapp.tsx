@@ -14,7 +14,7 @@ export default function ButtonWhatsapp() {
       >
         <button 
           className={`flex rounded-4xl bg-transparent hover:bg-green-600 hover:text-white transition-colors duration-500 ease-in-out 
-            border border-foreground gap-3 justify-center items-center cursor-pointer px-5 py-3
+            border border-foreground gap-3 justify-center items-center cursor-pointer px-5 py-2 md:py-3
             animate-gradient-x shadow-xl`}
         >
           <FaWhatsapp className="text-2xl" />

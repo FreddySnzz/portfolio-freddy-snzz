@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       new URL('https://imgur.com/**'),
       new URL('https://i.imgur.com/**'),
+      new URL('https://camo.githubusercontent.com/**'),
+      new URL('https://img.shields.io/**'),
     ],
   },
 };
