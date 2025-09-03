@@ -69,5 +69,5 @@ export const phrases = [
   "Meu nome é Fredson Luiz",
   "Sou Desenvolvedor Fullstack 💻",
   "Vamos construir algo juntos? 🫱🏼‍🫲🏼",
-  "FAZ UM BOTÃO PARA MUDAR LING PT/EN",
+  // "FAZ UM BOTÃO PARA MUDAR LING PT/EN",
 ];

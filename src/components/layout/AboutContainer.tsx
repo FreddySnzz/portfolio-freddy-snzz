@@ -132,7 +132,7 @@ export default function AboutContainer() {
       </div>
 
       {isSmUp && (
-        <div className="flex justify-center mt-8 w-full md:hidden bg-amber-300">
+        <div className="flex justify-center mt-8 w-full md:hidden">
           <MosaicoContainer />
         </div>
       )}

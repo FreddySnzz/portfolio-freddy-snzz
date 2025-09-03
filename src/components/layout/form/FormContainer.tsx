@@ -58,7 +58,7 @@ export default function FormContainer() {
       ), {
         action: {
           label: "X",
-          onClick: () => console.log(),
+          onClick: () => console.log(error),
         },
       });
     } finally {

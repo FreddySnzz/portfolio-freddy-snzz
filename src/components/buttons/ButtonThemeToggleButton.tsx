@@ -2,7 +2,7 @@
 
 import { MdSunny } from "react-icons/md";
 import { HiMiniMoon } from "react-icons/hi2";
-import { Toggle } from "./ui/toggle";
+import { Toggle } from "../ui/toggle";
 import useAppData from "@/data/hook/useAppData";
 
 export function ThemeToggle() {

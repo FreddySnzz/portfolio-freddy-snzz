@@ -8,7 +8,7 @@ export default function TextAnimated() {
 
   useEffect(() => {
     let timeout: NodeJS.Timeout
-    let currentText = phrases[index]
+    const currentText = phrases[index]
     let i = 0
 
     function type() {

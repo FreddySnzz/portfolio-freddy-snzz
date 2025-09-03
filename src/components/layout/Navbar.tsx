@@ -2,7 +2,8 @@ import Link from "next/link";
 import * as motion from "motion/react-client"
 import { AiFillHome } from "react-icons/ai";
 import { Separator } from "../ui/separator";
-import { ThemeToggle } from "../ThemeToggleButton";
+import { ThemeToggle } from "../buttons/ButtonThemeToggleButton";
+import { BackgroundToggle } from "../buttons/ButtonBackgroundToggle";
 import { useMediaQuery } from "@/data/hook/useMediaQuery";
 import useScrollDirection from "@/data/hook/useScrollDetect";
 
@@ -80,8 +81,9 @@ export default function Navbar({ className }: NavbarProps) {
           <span>Contato</span>
         </Link>
         <Separator orientation="vertical" className="hidden sm:block bg-muted-foreground" />
-        <div>
+        <div className="flex">
           <ThemeToggle />
+          <BackgroundToggle />
         </div>
       </motion.div>
     </motion.header>

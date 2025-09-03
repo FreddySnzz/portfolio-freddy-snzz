@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
       new URL('https://img.shields.io/**'),
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;

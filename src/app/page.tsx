@@ -2,10 +2,7 @@
 
 import AboutContainer from "@/components/layout/AboutContainer";
 import ApresentationContainer from "@/components/layout/ApresentationContainer";
-import { 
-  RBGAnimatedBackground, 
-  BackgroundGradientContainer 
-} from "@/components/layout/Background";
+import BackgroundContainer from "@/components/layout/BackgroundContainer";
 import ContactContainer from "@/components/layout/ContactContainer";
 import Footer from "@/components/layout/Footer";
 import Layout from "@/components/layout/Layout";
@@ -15,7 +12,7 @@ import { Toaster } from "sonner";
 
 export default function Home() {
   return (
-    <BackgroundGradientContainer>
+    <BackgroundContainer>
       <Toaster />
       <Navbar />
       <ApresentationContainer />
@@ -25,6 +22,6 @@ export default function Home() {
         <ContactContainer />
       </Layout>
       <Footer />
-    </BackgroundGradientContainer>
+    </BackgroundContainer>
   );
 }
