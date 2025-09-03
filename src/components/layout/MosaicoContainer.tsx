@@ -9,12 +9,12 @@ export default function MosaicoContainer() {
             <PictureFrame src="/images/playing-drums2.png" size={600} />
           </div>
         </div>
-        <div className="flex justify-center items-center overflow-hidden p-4 w-80 h-120 rounded-xl bg-white shadow-lg">
+        <div className="flex justify-center items-center overflow-hidden p-4 w-80 h-120 scale-90 xl:scale-100 rounded-xl bg-white shadow-lg">
           <PictureFrame src="/images/pic1.jpeg" size={300} />
         </div>
       </div>
       <div className="grid grid-cols-1 xl:flex xl:flex-col gap-8">
-        <div className="flex justify-center items-center overflow-hidden p-4 w-80 h-120 rounded-xl bg-white shadow-lg">
+        <div className="flex justify-center items-center overflow-hidden p-4 w-80 h-120 scale-90 xl:scale-100 rounded-xl bg-white shadow-lg">
           <div className="flex justify-center items-center w-full h-full object-cover rounded-xl">
             <PictureFrame src="/images/programming.jpeg" size={600} />
           </div>

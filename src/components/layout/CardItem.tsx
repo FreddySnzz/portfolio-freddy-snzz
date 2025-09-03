@@ -24,8 +24,8 @@ export default function CardItem({ project }: { project: any }) {
   return (
     <div>
       <motion.div
-        whileHover={{ scale: 1.3 }}
-        whileTap={{ scale: 1 }}
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 500, damping: 30 }}
         className="relative flex group items-center justify-center min-w-[350px] sm:w-auto h-auto rounded-4xl md:p-6 object-cover overflow-hidden"
       >

@@ -26,9 +26,9 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
       <motion.div
         ref={containerRef}
         drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
+        dragConstraints={{ left: dragLeft, right: 0 }}
         dragElastic={0.2}
-        className="flex h-full gap-8 px-4 select-none cursor-grab active:cursor-grabbing"
+        className="flex items-center h-full gap-8 px-4 select-none cursor-grab active:cursor-grabbing"
       >
         <motion.div
           whileHover={{ scale: 1.1 }}
@@ -53,7 +53,7 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
                   learning: "UX",
                 }}
               />
-              <div className="flex items-center justify-center mt-10">
+              <div className="flex items-center justify-center mt-4">
                 <ButtonCurriculum />
               </div>
             </div>
@@ -72,24 +72,13 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
             </div>
 
             <div className="flex flex-col overflow-hidden">
-
-              {/* 
-              <CustomBadge url={badgeList.HTML.link} />
-              <CustomBadge url={badgeList.Docker.link} />
-              <CustomBadge url={badgeList.Git.link} />
-              <CustomBadge url={badgeList.Jest.link} />
-              <CustomBadge url={badgeList.Tailwind.link} />
-              <CustomBadge url={badgeList.ShadcnUI.link} />
-              <CustomBadge url={badgeList.RabbitMQ.link} />
-              <CustomBadge url={badgeList.AWS.link} /> 
-              */}
-
               <p className="mt-8">
                 {skills.main.title}
               </p>
               <div className="mt-2">
                 <div className="flex gap-1">
                   <CustomBadge url={badgeList.Javascript.link} />
+                  <CustomBadge url={badgeList.React.link} />
                   <CustomBadge url={badgeList.NestJs.link} />
                   <CustomBadge url={badgeList.Nextjs.link} />
                 </div>
@@ -97,6 +86,7 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
                   <CustomBadge url={badgeList.Typescript.link} />
                   <CustomBadge url={badgeList.Nodejs.link} />
                   <CustomBadge url={badgeList.Expressjs.link} />
+                  <CustomBadge url={badgeList.Vue.link} />
                 </div>
               </div>
 
@@ -113,20 +103,37 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
                   <CustomBadge url={badgeList.MongoDB.link} />
                   <CustomBadge url={badgeList.Redis.link} />
                   <CustomBadge url={badgeList.SQLite.link} />
-                  <CustomBadge url={badgeList.AntDesign.link} />
+                  <CustomBadge url={badgeList.FirebaseDB.link} />
+                </div>
+                <div className="flex items-start gap-1 mt-1">
+                  <CustomBadge url={badgeList.TypeORM.link} />
+                  <CustomBadge url={badgeList.Prima.link} />
+                  <CustomBadge url={badgeList.Sequelize.link} />
+                  <CustomBadge url={badgeList.Mongoose.link} />
                 </div>
               </div>
 
-              <p className="flex flex-col mt-2">
-                {skills.main.skills}
-              </p>
-
-              <p className="flex flex-col mt-2">
+              <p className="mt-4">
                 {skills.others.title}
-                <span>
-                  {skills.others.skills}
-                </span>
               </p>
+              <div className="mt-2">
+                <div className="flex gap-1">
+                  <CustomBadge url={badgeList.Tailwind.link} />
+                  <CustomBadge url={badgeList.ShadcnUI.link} />
+                  <CustomBadge url={badgeList.AntDesign.link} />
+                </div>
+                <div className="flex items-start gap-1 mt-1">
+                  <CustomBadge url={badgeList.ChakraUI.link} />
+                  <CustomBadge url={badgeList.Zod.link} />
+                  <CustomBadge url={badgeList.StyledComponents.link} />
+                </div>
+                <div className="flex items-start gap-1 mt-1">
+                  <CustomBadge url={badgeList.Docker.link} />
+                  <CustomBadge url={badgeList.AWS.link} />
+                  <CustomBadge url={badgeList.Supabase.link} />
+                  <CustomBadge url={badgeList.Jest.link} />
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

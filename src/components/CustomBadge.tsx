@@ -9,6 +9,8 @@ export default function CustomBadge({ url, alt = "Badge", className }: CustomBad
     <img
       src={url}
       alt={alt}
+      onContextMenu={(e) => e.preventDefault()}
+      draggable={false}
       className={`h-4 w-auto object-contain ${className}`}
     />
   );

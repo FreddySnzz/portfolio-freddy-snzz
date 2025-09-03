@@ -75,7 +75,7 @@ export const badgeList = {
     link: 'https://img.shields.io/badge/Prisma-3982CE?logo=Prisma&logoColor=white'
   },
   Mongoose: {
-    link: ''
+    link: 'https://img.shields.io/badge/-mongoose-880000?logo=mongoose&logoColor=white'
   },
   Sequelize: {
     link: 'https://img.shields.io/badge/Sequelize-52B0E7?logo=Sequelize&logoColor=white'

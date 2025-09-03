@@ -55,7 +55,7 @@ export default function Navbar({ className }: NavbarProps) {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4 }}
-              className="hidden md:block ml-4 text-center justify-center items-center"
+              className="hidden md:block ml-4 text-center justify-center items-center cursor-pointer"
             >
               Voltar para o início
             </motion.span>

@@ -5,7 +5,7 @@ import MosaicoContainer from "./MosaicoContainer";
 import ButtonScrollDown from "../buttons/ButtonScrollDown";
 
 export default function AboutContainer() {
-  const isMdUp = useMediaQuery("(min-width: 350px)");
+  const isSmUp = useMediaQuery("(min-width: 350px)");
 
   return (
     <section 
@@ -77,6 +77,7 @@ export default function AboutContainer() {
           </div>
         </div>
       </div>
+
       <div className="flex w-10/12 mt-16">
         <motion.h1 
           className="text-gray-600 font-bold"
@@ -120,7 +121,7 @@ export default function AboutContainer() {
           </p>
         </motion.div>
         <motion.div 
-          initial={{ x: 100, opacity: 0 }}
+          initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ type: "spring", stiffness: 20, duration: 0.8 }}
           viewport={{ once: false }}
@@ -129,11 +130,13 @@ export default function AboutContainer() {
           <MosaicoContainer />
         </motion.div>
       </div>
-      {isMdUp && (
-        <div className="flex justify-center mt-8 w-full md:hidden">
+
+      {isSmUp && (
+        <div className="flex justify-center mt-8 w-full md:hidden bg-amber-300">
           <MosaicoContainer />
         </div>
       )}
+
       <div className="flex flex-col items-center justify-center mt-16 mb-8">
         <ButtonScrollDown section="projetos" />
       </div>
