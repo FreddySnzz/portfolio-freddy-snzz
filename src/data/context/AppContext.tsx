@@ -6,12 +6,12 @@ import {
   useEffect, 
   useState 
 } from "react";
-import refreshPage from "../functions/refreshPageOnClick";
 
 interface AppContextProps {
   theme?: string;
   toggleTheme?: () => void;
   background?: string;
+  setBackground?: (bg: string) => void;
   toggleBackground?: () => void;
 };
 
@@ -19,6 +19,7 @@ const AppContext = createContext<AppContextProps>({});
 
 export function AppProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState('');
+
   function toggleTheme() {
     const newTheme = theme === '' ? 'dark' : '';
     setTheme(newTheme);
@@ -30,25 +31,32 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setTheme(savedTheme);
   }, []);
 
-  const [background, setBackground] = useState('gradient');
-
-  function toggleBackground() {
-    const newBackground = background === 'gradient' ? 'rgb' : 'gradient';
-    setTheme(newBackground);
-    localStorage.setItem('background', newBackground);
-    refreshPage();
-  };
+  const backgrounds = ["gradient", "rgb"];
+  const [background, setBackground] = useState("gradient");
 
   useEffect(() => {
-    const savedBackground = localStorage.getItem('background') || 'gradient';
-    setBackground(savedBackground);
+    const savedBackground = localStorage.getItem("background");
+    if (savedBackground && backgrounds.includes(savedBackground)) {
+      setBackground(savedBackground);
+    }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("background", background);
+  }, [background]);
+
+  function toggleBackground() {
+    const currentIndex = backgrounds.indexOf(background);
+    const nextIndex = (currentIndex + 1) % backgrounds.length;
+    setBackground(backgrounds[nextIndex]);
+  };
 
   return (
     <AppContext.Provider value={{ 
       theme,
       toggleTheme,
       background,
+      setBackground,
       toggleBackground
     }}>
       {children}

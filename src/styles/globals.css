@@ -157,3 +157,17 @@ body {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
+
+/* Waves Background */
+@keyframes wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-wave-slow {
+  animation: wave 20s linear infinite;
+}
+
+.animate-wave-fast {
+  animation: wave 12s linear infinite;
+}

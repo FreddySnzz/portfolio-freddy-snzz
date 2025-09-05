@@ -28,7 +28,7 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
         drag="x"
         dragConstraints={{ left: dragLeft, right: 0 }}
         dragElastic={0.2}
-        className="flex items-center h-full gap-8 px-4 select-none cursor-grab active:cursor-grabbing"
+        className="flex items-center h-full gap-8 px-4 scale-80 sm:scale-100 select-none cursor-grab active:cursor-grabbing"
       >
         <motion.div
           whileHover={{ scale: 1.1 }}
@@ -71,7 +71,7 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
               <p className="text-xs font-light text-gray-700">{subtittleInfo[1]}</p>
             </div>
 
-            <div className="flex flex-col overflow-hidden">
+            <div className="flex flex-col overflow-hidden text-gray-200">
               <p className="mt-8">
                 {skills.main.title}
               </p>
@@ -150,7 +150,7 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
             </div>
             <div className="flex flex-col">
               <span className="text-sm text-yellow-400 mt-8">FORMAÇÃO:</span>
-              <p className="text-sm">
+              <p className="text-sm text-gray-200">
                 • {education.graduation.course}
                 <span className="flex flex-col ml-2">
                   <span className="text-xs text-gray-300">
@@ -163,7 +163,7 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
               </p>
 
               <span className="text-sm text-yellow-400 mt-4">CURSOS:</span>
-              <ul className="text-sm">
+              <ul className="text-sm text-gray-200">
                 {educationArray[0].complementary.map((info: any, index: number) => (
                   <li key={index} className="mb-2">
                     • {info.course}
@@ -176,7 +176,7 @@ export default function CardContainer({ type, quantity }: CardContainerProps) {
               <span className="text-sm text-yellow-400 mt-4">IDIOMAS:</span>
               {languages.map((info: any, index: number) => (
                 <div key={index}>
-                  <h1 className="text-sm">
+                  <h1 className="text-sm text-gray-200">
                     • {info.language}
                   </h1>
                   <ul className="text-xs ml-2 text-gray-400">

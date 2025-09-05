@@ -93,12 +93,18 @@ export default function AboutContainer() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-gray-200 dark:text-gray-950 text-sm 2xl:text-lg">
-            Estou na área de desenvolvimento desde 2021 — mas desde 2018, quando me vi interessado em fazer o curso da linguagem Python
-            no canal do Gustavo Guanabara. Ali foi onde conheci os horizontes da programação e desenvolvimento. <br /><br />
+          <motion.p 
+            initial={{ y: -100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="text-gray-200 dark:text-gray-950 text-sm 2xl:text-lg"
+          >
+            Estou na área de desenvolvimento desde 2021 — mas desde 2018, quando vi os vídeos de linguagem Python no canal do Gustavo Guanabara,
+            me despertou a curiosidade e o interesse — e desde então foi onde conheci os horizontes da programação e desenvolvimento. <br /><br />
 
-            Após esse contato inicial, tive um breve hiato nos estudos, pois servi as Forças Armadas Brasileiras como soldado. <br /><br />
-            Em 2021, iniciei em um pequeno projeto chamado 
+            Após esse contato inicial, tive um breve que dar uma breve pausa nos estudos, pois servi as Forças Armadas Brasileiras como soldado. <br /><br />
+
+            Em 2021 voltei aos estudos, dessa vez em outra linguagem, o Node.js ❤️. Iniciei em um pequeno projeto com um amigo, projeto de nome 
             CEFITEM — uma plataforma de auditoria de documentos fiscais. Esse foi meu start na carreira e meu primeiro contato com um
             projeto real. <br /><br />
             
@@ -118,23 +124,29 @@ export default function AboutContainer() {
 
             Quando não estou projetando ou criando, estou buscando inspiração fora das telas — amo tocar, ouvir uma boa música, explorar coisas novas, 
             viver novas experiências, praticar esportes — tanto tradicional, quanto eSports.
-          </p>
+          </motion.p>
         </motion.div>
         <motion.div 
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ type: "spring", stiffness: 20, duration: 0.8 }}
           viewport={{ once: false }}
-          className="hidden md:block w-full"
+          className="hidden xl:block w-full"
         >
           <MosaicoContainer />
         </motion.div>
       </div>
 
       {isSmUp && (
-        <div className="flex justify-center mt-8 w-full md:hidden">
+        <motion.div 
+          initial={{ y: -100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 20, duration: 0.5 }}
+          viewport={{ once: false }}
+          className="flex justify-center items-center mt-8 w-full xl:hidden overflow-hidden"
+        >
           <MosaicoContainer />
-        </div>
+        </motion.div>
       )}
 
       <div className="flex flex-col items-center justify-center mt-16 mb-8">

@@ -2,14 +2,13 @@ import Link from "next/link";
 import * as motion from "motion/react-client"
 import { AiFillHome } from "react-icons/ai";
 import { Separator } from "../ui/separator";
-import { ThemeToggle } from "../buttons/ButtonThemeToggleButton";
-import { BackgroundToggle } from "../buttons/ButtonBackgroundToggle";
 import { useMediaQuery } from "@/data/hook/useMediaQuery";
 import useScrollDirection from "@/data/hook/useScrollDetect";
+import SettingsButton from "../buttons/ButtonSettings";
 
 interface NavbarProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
-}
+};
 
 export default function Navbar({ className }: NavbarProps) {
   const linkClassName = `hover:text-blue-400 transition-colors font-semibold duration-300 dark:hover:text-gray-400`
@@ -82,8 +81,7 @@ export default function Navbar({ className }: NavbarProps) {
         </Link>
         <Separator orientation="vertical" className="hidden sm:block bg-muted-foreground" />
         <div className="flex">
-          <ThemeToggle />
-          <BackgroundToggle />
+          <SettingsButton />
         </div>
       </motion.div>
     </motion.header>

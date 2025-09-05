@@ -9,7 +9,9 @@ export const projects = [
       "https://i.imgur.com/gHIXvLU.png",
       "https://i.imgur.com/pAFhEre.png"
     ],
-    year: '2025'
+    year: '2025',
+    stackFrontend: ["Next.js", "React", "React Icons", "TailwindCSS", "Motion.js"],
+    stackBackend: ["NestJs", "SQLite", "TypeORM"]
   },
   {
     name: 'PAINEL ADMINSTRATIVO', 
@@ -21,7 +23,9 @@ export const projects = [
       "https://i.imgur.com/RVI5x0o.png",
       "https://i.imgur.com/gqz77Jr.png"
     ], 
-    year: '2025'
+    year: '2025',
+    stackFrontend: ["Next.js", "React", "React Icons", "TailwindCSS"],
+    stackBackend: ["Firebase"]
   },
   {
     name: 'CRIADOR DE FORMULÁRIOS', 
@@ -35,6 +39,8 @@ export const projects = [
       "https://i.imgur.com/w6YAm7w.png",
       "https://i.imgur.com/BeOEyPd.png"
     ], 
-    year: '2025'
+    year: '2025',
+    stackFrontend: ["Next.js", "React", "React Icons", "Shadcn/UI", "TailwindCSS"],
+    stackBackend: ["Supabase"]
   }
 ];

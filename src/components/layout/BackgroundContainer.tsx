@@ -1,28 +1,18 @@
-'use client';
-
-import useAppData from "@/data/hook/useAppData";
 import BackgroundGradient from "../BackgroundGradient";
-import RBGAnimatedBackground from "../RBGAnimatedBackground";
+import RBGAnimatedBackground from "../BackgroundRGB";
+import useAppData from "@/data/hook/useAppData";
 
 interface BackgroundProps {
   children?: React.ReactNode;
-  className?: string;
-};
+}
 
-export default function BackgroundContainer(props: BackgroundProps) {
+export default function BackgroundContainer({ children }: BackgroundProps) {
   const { background } = useAppData();
-  
-  return (
-    <>
-      {background === 'gradient' ? (
-        <BackgroundGradient>
-          {props.children}
-        </BackgroundGradient>
-      ) : (
-        <RBGAnimatedBackground>
-          {props.children}
-        </RBGAnimatedBackground>
-      )}
-    </>
-  );
-};
+
+  const backgroundsMap: Record<string, React.ReactNode> = {
+    gradient: <BackgroundGradient>{children}</BackgroundGradient>,
+    rgb: <RBGAnimatedBackground>{children}</RBGAnimatedBackground>,
+  };
+
+  return <>{backgroundsMap[background || ''] ?? children}</>;
+}
