@@ -11,7 +11,8 @@ export const projects = [
     ],
     year: '2025',
     stackFrontend: ["Next.js", "React", "React Icons", "TailwindCSS", "Motion.js"],
-    stackBackend: ["NestJs", "SQLite", "TypeORM"]
+    stackBackend: ["NestJs", "SQLite", "TypeORM"],
+    repositoryUrl: 'https://github.com/FreddySnzz/circular-economy-frontend'
   },
   {
     name: 'PAINEL ADMINSTRATIVO', 
@@ -25,7 +26,8 @@ export const projects = [
     ], 
     year: '2025',
     stackFrontend: ["Next.js", "React", "React Icons", "TailwindCSS"],
-    stackBackend: ["Firebase"]
+    stackBackend: ["Firebase"],
+    repositoryUrl: 'https://github.com/FreddySnzz/admin-template'
   },
   {
     name: 'CRIADOR DE FORMULÁRIOS', 
@@ -41,6 +43,7 @@ export const projects = [
     ], 
     year: '2025',
     stackFrontend: ["Next.js", "React", "React Icons", "Shadcn/UI", "TailwindCSS"],
-    stackBackend: ["Supabase"]
+    stackBackend: ["Supabase"],
+    repositoryUrl: 'https://github.com/FreddySnzz/form-builder-challenge'
   }
 ];

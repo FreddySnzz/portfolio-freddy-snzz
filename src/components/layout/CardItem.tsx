@@ -5,6 +5,7 @@ import { Separator } from "../ui/separator";
 import { useIsTouchDevice } from "@/data/hook/useMouseDrag";
 import ButtonCarousel from "../buttons/ButtonCarousel";
 import { Badge } from "@/components/ui/badge";
+import ButtonRepositoryUrl from "../buttons/ButtonRepositoryGithub";
 
 export default function CardItem({ project }: { project: any }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,30 +44,33 @@ export default function CardItem({ project }: { project: any }) {
         />
       </motion.div>
       <Separator orientation="horizontal" className="bg-muted-foreground my-4" />
-      <div className="flex flex-col">
-        <span className="font-bold tracking-widest">
-          {project.name} —
-          <span className="ml-2 text-xs text-gray-500">
-            {project.year}
+      <div className="flex justify-between">
+        <div className="flex flex-col w-full">
+          <span className="font-bold tracking-widest">
+            {project.name} —
+            <span className="ml-2 text-xs text-gray-500">
+              {project.year}
+            </span>
           </span>
-        </span>
-        <span className="mt-1 text-sm text-gray-500">
-          {project.about}
-        </span>
-        <span className="mt-2 text-sm">
-          <div className="flex gap-1 items-center">
-            {project.stackFrontend.map(
-              (tech: string, i: number) => 
-                <Badge 
-                  key={i}
-                  variant="outline"
-                  className="border-none bg-gray-800 text-white dark:bg-gray-400 dark:text-gray-950 shadow-xl ml-1"
-                >
-                  {tech}
-                </Badge>
-            )}
-          </div>
-        </span>
+          <span className="mt-1 text-sm text-gray-500">
+            {project.about}
+          </span>
+          <span className="mt-2 text-sm">
+            <div className="flex gap-1 items-center">
+              {project.stackFrontend.map(
+                (tech: string, i: number) => 
+                  <Badge 
+                    key={i}
+                    variant="outline"
+                    className="border-none bg-gray-800 text-white dark:bg-gray-400 dark:text-gray-950 shadow-xl ml-1"
+                  >
+                    {tech}
+                  </Badge>
+              )}
+            </div>
+          </span>
+        </div>
+        <ButtonRepositoryUrl repositoryUrl={project.repositoryUrl} />
       </div>
     </div>
   );
