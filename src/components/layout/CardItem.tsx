@@ -26,7 +26,7 @@ export default function CardItem({ project }: { project: any }) {
   return (
     <div>
       <motion.div
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 500, damping: 30 }}
         className="relative flex group items-center justify-center min-w-[350px] sm:w-auto h-auto rounded-4xl object-cover overflow-hidden"
       >
@@ -35,7 +35,7 @@ export default function CardItem({ project }: { project: any }) {
           className={isTouch ? "" : "hidden group-hover:block cursor-pointer"}
           onClick={handlePrev}
         />
-        <div className="flex items-center justify-center w-full h-60 object-cover overflow-hidden rounded-2xl font-bold">
+        <div className="flex items-center justify-center w-full h-80 object-cover overflow-hidden rounded-2xl font-bold">
           <PictureFrame src={project.images[currentIndex]} />
         </div>
         <ButtonCarousel

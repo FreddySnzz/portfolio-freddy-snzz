@@ -12,7 +12,7 @@ export default function PictureFrame({ src, size }: PictureFrameProps) {
     <div onContextMenu={(e) => e.preventDefault()}>
       <Image 
         src={src} 
-        alt="Picture" width={500} height={500}
+        alt="Picture" width={1000} height={1000}
         draggable="false"
         className={`rounded-lg object-cover ${picSize}`}
       />

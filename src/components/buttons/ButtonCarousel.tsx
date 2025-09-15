@@ -1,8 +1,8 @@
+import * as motion from "motion/react-client"
 import { 
   FaChevronLeft, 
   FaChevronRight, 
 } from "react-icons/fa"; 
-import { Button } from "../ui/button";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -12,11 +12,15 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function ButtonCarousel({ className, direction, onClick }: ButtonProps) {
   return (
-    <Button
+    <motion.button
+      initial={false}
+      aria-label="Previous"
+      whileFocus={{ outline: `2px solid` }}
+      whileTap={{ scale: 0.9 }}
       onClick={onClick}
-      className={`bg-transparent shadow-none hover:bg-transparent cursor-pointer ${className}`}
+      className={`mx-2 bg-transparent shadow-none hover:bg-transparent cursor-pointer ${className}`}
     >
-      {direction === "left" ? <FaChevronLeft /> : <FaChevronRight />}
-    </Button>
+      {direction === "left" ? <FaChevronLeft className="text-xl" /> : <FaChevronRight className="text-xl" />}
+    </motion.button>
   );
 }

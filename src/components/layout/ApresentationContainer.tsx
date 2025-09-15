@@ -16,7 +16,9 @@ export default function ApresentationContainer() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center justify-center h-2/5 md:h-2/3 w-full transition-all duration-500 md:group-hover:w-3/4"
         >
-          <TextAnimated /> 
+          <div className="flex justify-center items-center w-2xl h-16">
+            <TextAnimated /> 
+          </div>
           <div className="flex justify-center items-center gap-8 md:gap-24 mt-12">
             <motion.div
               initial={{ x: -100, opacity: 0 }}

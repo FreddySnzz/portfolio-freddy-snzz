@@ -15,7 +15,7 @@ export default function ProjectsContainer() {
         <h1 className="mt-24 text-xl font-mono font-bold tracking-widest text-gray-600">
           PROJETOS
         </h1>
-        <div className="grow">
+        <div className="mt-8 grow">
           <CardContainer quantity={projects.length} type="section" />
         </div>
         <div className="flex justify-center items-center my-12">
