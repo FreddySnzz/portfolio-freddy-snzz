@@ -102,7 +102,7 @@ export default function AboutContainer() {
             Estou na área de desenvolvimento desde 2021 — mas desde 2018, quando vi os vídeos de linguagem Python no canal do Gustavo Guanabara,
             me despertou a curiosidade e o interesse — e desde então foi onde conheci os horizontes da programação e desenvolvimento. <br /><br />
 
-            Após esse contato inicial, tive um breve que dar uma breve pausa nos estudos, pois servi as Forças Armadas Brasileiras como soldado. <br /><br />
+            Após esse contato inicial, tive que dar uma breve pausa nos estudos, pois servi as Forças Armadas Brasileiras como soldado. <br /><br />
 
             Em 2021 voltei aos estudos, dessa vez em outra linguagem, o Node.js ❤️. Iniciei em um pequeno projeto com um amigo, projeto de nome 
             CEFITEM — uma plataforma de auditoria de documentos fiscais. Esse foi meu start na carreira e meu primeiro contato com um
@@ -115,7 +115,7 @@ export default function AboutContainer() {
             de reconhecimento facial. Sem dúvidas, o projeto mais complexo que já trabalhei até hoje. <br /><br />
 
             O maior desafio não foi técnico, foi regra de negócio. Criar uma API que se comunicava com uma API externa da Hikvision — empresa 
-            no qual fabrica os terminais, não foi uma tarefa fácil. Com um equipe bem pequena, apenas três devs e um ux/ui designer,
+            no qual fabrica os terminais, não foi uma tarefa fácil. Com uma equipe bem pequena, apenas três devs e um ux/ui designer,
             as demandas foram bastante altas e corridas. <br /><br />
 
             Por fim, e não menos importante, a Secretaria de Educação do Estado do Piauí - SEDUC. Lá pude aprimorar 200% minhas habilidades e conhecimentos
